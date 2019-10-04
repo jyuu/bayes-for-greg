@@ -596,6 +596,12 @@ class: inverse, center, middle
 
 ---
 
+```{r, echo = FALSE}
+knitr::include_graphics("images/map.png")
+```
+
+---
+
 class: inverse, center, middle
 
 # Thanks!
