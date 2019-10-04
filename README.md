@@ -1,6 +1,6 @@
 # bayes-for-greg
 
-15-minute lesson to accompany tidyverse exam 
+15-minute lesson on the Bayes theorem to accompany tidyverse exam.
 
 # Concept map 
 
