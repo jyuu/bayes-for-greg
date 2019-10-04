@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Teaching Supplement</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Joyce Cahoon" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="joyce.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Teaching Supplement
+## On My Favorite Theorem
+### Joyce Cahoon
+### North Carolina State University
+### (updated: 2019-10-03)
+
+---
+
+
+# The Learner Persona
+
+&lt;img src="images/learner.png" width="30%" /&gt;
+
+Dillon is a pre-med student at NC State. He’s committed to major in biology and loves the hands-on work he gets to do shadowing scientists in the lab. He's very good at memorizing facts, especially when it comes to anatomy, but to apply to medical school, he has to complete a few math courses. He decides to start with statistics as his friends say it's an easy way to get an A. Unfortunately, they don't know he hates math and has not done much math beyond basic algebra since graduating from high school. Nevertheless, he knows he will need to develop some kind of statistical literacy to understand what a p-value is, so he signed up for introductory statistics. He hopes that he has a nice teacher.
+
+
+---
+class: inverse, center, middle
+
+# My [Favorite](https://askgoodquestions.blog/) Theorem
+
+---
+background-image: url("images/elisa.png")
+
+
+
+# The [ELISA](https://www.jstor.org/stable/2245749?seq=1#metadata_info_tab_contents) Test
+
+---
+
+# The [ELISA](https://www.jstor.org/stable/2245749?seq=1#metadata_info_tab_contents) Test
+
+- Developed in mid 1980s to screen blood donations
+
+--
+
+- Test gives a correct positive result for `\(97.7\%\)` of blood samples infected with HIV
+
+--
+
+&gt; **Sensitivity** of the test is 97.7%.
+
+--
+
+- Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected with HIV
+
+--
+
+&gt; **Specificity** of the test is 92.6%.
+
+--
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+---
+
+class: inverse, center, middle
+
+# If a patient tests positive, what is the probability the patient has HIV?
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ? &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [1] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [2] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [1] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [2] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- Test gives a correct positive result for `\(97.7\%\)` of blood samples infected with HIV 
+
+--
+
+&gt; What is this known as?
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [1] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [2] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- Test gives a correct positive result for `\(97.7\%\)` of blood samples infected with HIV 
+
+
+&gt; What is this known as? **Sensitivity**
+
+--
+
+- Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected with HIV
+
+--
+
+&gt; What is this known as?
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [1] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [2] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- Test gives a correct positive result for `\(97.7\%\)` of blood samples infected with HIV 
+
+
+&gt; What is this known as? **Sensitivity**
+
+
+- Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected with HIV
+
+
+&gt; What is this known as? **Specificity** 
+
+--
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [1] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [2] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+### Let's fill in [1] together:
+
+## 1,000,000 people x `_____`
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [2] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+### Let's fill in [1] together:
+
+## 1,000,000 people x 0.005 = 5,000
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [2] &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+### Let's fill in [2] together:
+
+## `_____` - `_____` = `_____`
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+### Let's fill in [2] together:
+
+## 1,000,000 - 5,000 = 995,000
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+### Your turn!
+
+<div class="countdown" id="timer_5d96a60d" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [3] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+## [3] `_____` x 5,000 = `_____` 
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4,885 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [4] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+## [3] **Sensitivity** x 5,000 = .977 x 5,000 = 4,885 
+
+--
+
+## Also known as, the number of **True Positives**
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4,885 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 115 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+## [4] 5,000 - 4,885 = 115 
+
+--
+
+## Also known as, the number of **False Negatives**
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4,885 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 115 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [5] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+## [5] `_____` x 995,000 = `_____`
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4,885 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 115 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [6] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 921,370 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+## [5] **Specificity** x 995,000 = .926 * 995,000 = 921,370
+
+--
+
+## Also known as, the number of **True Negatives**
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4,885 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 115 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 73,630 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 921,370 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [7] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [8] &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+## [6] 995,000 - 921,370 = 73,630
+
+--
+
+## Also known as, the number of **False Positives**
+
+---
+
+# Suppose our world = 1 million people...
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4,885 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 115 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 73,630 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 921,370 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 78,515 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 921,485 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+- **Sensitivity**: Test gives a correct positive result for `\(97.7\%\)` of blood samples infected
+
+- **Specificity**: Test gives a correct negative result for `\(92.6\%\)` of blood samples not infected
+
+- Only `\(0.5\%\)` of Americans have HIV
+
+## [7] 4,885 + 73,630 = 78,515
+
+--
+
+## [8] 115 + 921,370 = 921,485
+
+---
+
+class: inverse, center, middle
+
+# If a patient tests positive, what is the probability the patient has HIV?
+
+&lt;table class="table table-striped" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; _ &lt;/th&gt;
+   &lt;th style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; Positive Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; Negative Blood Test &lt;/th&gt;
+   &lt;th style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; Infected &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 4,885 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 115 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 5,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; Not Infected &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 73,630 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 921,370 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 995,000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 78,515 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 921,485 &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 1,000,000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+class: inverse, center, middle
+
+# `$$\frac{4,885}{78,515} = 6.2\%$$`
+
+---
+
+class: inverse, center, middle
+
+# Does that make sense? 
+
+---
+
+# Some possible reasons
+
+- A lot of **false positives**
+
+--
+
+- A lot of people are **not infected**
+
+--
+
+- There are two different conditional probabilities:
+
+--
+
+## &lt;center&gt;% of people with HIV given they tested positive&lt;/center&gt;
+
+## &lt;center&gt;vs&lt;/center&gt;
+
+## &lt;center&gt;% of people with a positive test given they have HIV&lt;/center&gt;
+
+---
+
+class: inverse, center, middle
+
+# Bayes Theorem
+
+---
+
+# Bayes Theorem
+
+## `$$P (HIV | +) = \frac{P(+ \text{ and } HIV)}{P(+)}$$`
+
+--
+
+## `$$6.2\% = \frac{\frac{4,985}{1,000,000}}{\frac{78,515}{1,000,000}}$$`
+
+---
+
+# Bayes Theorem
+
+## `$$P (HIV | +) = \frac{P(+ \text{ and } HIV)}{P(+)}$$`
+
+--
+
+## `$$P (HIV | +) = \frac{P(+|HIV) P(HIV)}{P(+)}$$`
+
+--
+
+## `$$6.2\% = \frac{.977 * .005}{\frac{78,515}{1,000,000}}$$`
+
+---
+
+# Bayes Theorem
+
+We can generalize... 
+
+--
+
+## `$$P (H | E) = \frac{P(E|H) P(H)}{P(E)}$$`
+
+---
+
+class: inverse, center, middle
+
+# What does that mean about the ELISA test?
+
+---
+
+# Is the ELISA test any good?
+
+- It is still effective (compare 6.2% to 0.5%)
+
+--
+
+- A person with a positive test result is 12.4 times more likely to be infected with HIV than someone who has not been tested
+
+---
+
+class: inverse, center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+Lesson adapted from Allan Rossman's [**blog**](https://askgoodquestions.blog/).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
